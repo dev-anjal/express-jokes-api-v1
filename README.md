@@ -21,3 +21,37 @@ returns
   "punchline": "They always keep their code in control.",
   "type": "computer"
 }
+
+implemented type query for /get-two-part
+
+eg uri /api/v1/get-two-part?type=tech
+
+returns a random joke of type tech
+{
+  "id": 27,
+  "setup": "Why was the server room so noisy?",
+  "punchline": "Too many bytes were screaming!",
+  "type": "tech"
+}
+
+if the type is given wrong or outside the scope of our type of joke
+
+returns a error with the available types
+
+uri= http://localhost:3000/api/v1/get-two-part?type=gg
+
+returns
+`json
+{
+  "message": "Invalid Type",
+  "allowed_types": [
+    "tech",
+    "internet",
+    "ai",
+    "developer",
+    "programming",
+    "computer",
+    "hardware"
+  ]
+}
+`

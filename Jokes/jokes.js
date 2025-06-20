@@ -25,8 +25,30 @@ function getTwoPartJoke(cat=null){
     }
 }
 
+const allTypes = ['tech','internet','ai','developer','programming','computer','hardware']
+
+function getSpecificTypeJoke(jokeType){
+    // console.log(jokeType)
+    var matchedTypeJoke = []
+    if(allTypes.includes((jokeType.toLowerCase()))){
+        twoPartJokes.forEach(joke=>{
+            
+            if ((joke.type.toLocaleLowerCase()) == (jokeType.toLowerCase())){
+                matchedTypeJoke.push(joke)
+            }
+        })
+        const randomNumTemp = Math.floor(Math.random()*matchedTypeJoke.length)
+        return(matchedTypeJoke[randomNumTemp])
+    }
+    else{
+        return({message:'Invalid Type', allowed_types:allTypes})
+    }
+        
+}
+
 module.exports={
     getJokes,
     getOneJoke,
-    getTwoPartJoke
+    getTwoPartJoke,
+    getSpecificTypeJoke
 };
