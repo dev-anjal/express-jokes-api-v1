@@ -39,3 +39,5 @@ suscess returns:
 failiure/error returns:
 
 `{ "Error": "Invalid Headers, send title && joke", "Format": { "title": "setup of the joke", "joke": "Punchline of the Joke", "type": "type of joke [please use only listed ones]", "allowedJokeTypes": [ "tech", "internet", "ai", "developer", "programming", "computer", "hardware" ] } }`
+
+Futute implication : only admin previllage for Posting New Jokes and limiting requests to save server Overload
