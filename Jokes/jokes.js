@@ -1,6 +1,8 @@
 const jokes = require('./jokes.json');
 const twoPartJokes = require('./jokes_with_uid_and_type.json');
 
+const {writeJoke}=require('./jokeToFile');
+
 function getJokes(){
     return jokes;
 }
@@ -46,9 +48,14 @@ function getSpecificTypeJoke(jokeType){
         
 }
 
+function addJokeToFile(joke){
+    writeJoke(undefined,joke)
+}
+
 module.exports={
     getJokes,
     getOneJoke,
     getTwoPartJoke,
-    getSpecificTypeJoke
+    getSpecificTypeJoke,
+    addJokeToFile
 };
